@@ -8,34 +8,10 @@
   <style>
     *{box-sizing:border-box}
     :root{
-      --bg:#0f1420;
-      --panel:#171d2a;
-      --panel-2:#111827;
-      --text:#f1f4fa;
-      --muted:#9ba7bb;
-      --line:#293244;
-      --accent:#89a5ff;
-      --accent-soft:#202d52;
-      --green:#6ce9a6;
-      --yellow:#ffd166;
-      --red:#f97066;
-      --shadow:0 18px 50px rgba(0,0,0,.18);
-      color-scheme:dark;
+      --bg:#0f1420;--panel:#171d2a;--panel-2:#111827;--text:#f1f4fa;--muted:#9ba7bb;--line:#293244;--accent:#89a5ff;--accent-soft:#202d52;--green:#6ce9a6;--yellow:#ffd166;--red:#f97066;--shadow:0 18px 50px rgba(0,0,0,.18);color-scheme:dark;
     }
     [data-theme="light"]{
-      --bg:#f5f7fb;
-      --panel:#ffffff;
-      --panel-2:#f8faff;
-      --text:#172033;
-      --muted:#667085;
-      --line:#e4e8f0;
-      --accent:#3157d5;
-      --accent-soft:#eaf0ff;
-      --green:#18794e;
-      --yellow:#a15c00;
-      --red:#b42318;
-      --shadow:0 10px 30px rgba(20,36,70,.08);
-      color-scheme:light;
+      --bg:#f5f7fb;--panel:#ffffff;--panel-2:#f8faff;--text:#172033;--muted:#667085;--line:#e4e8f0;--accent:#3157d5;--accent-soft:#eaf0ff;--green:#18794e;--yellow:#a15c00;--red:#b42318;--shadow:0 10px 30px rgba(20,36,70,.08);color-scheme:light;
     }
     html,body{margin:0;min-height:100%;max-width:100%;overflow-x:hidden;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
     button{font:inherit}
@@ -53,78 +29,20 @@
     .table-wrap{width:100%;min-width:0}
     table{width:100%;max-width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border:1px solid var(--line);border-radius:12px;font-size:14px;table-layout:fixed}
     th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);border-right:1px solid var(--line);vertical-align:middle;overflow-wrap:anywhere}
-    th:last-child,td:last-child{border-right:0}
-    tr:last-child td{border-bottom:0}
+    th:last-child,td:last-child{border-right:0}tr:last-child td{border-bottom:0}
     th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);background:var(--panel-2)}
     td strong{color:var(--yellow)}
-    .comparison-table th:first-child,.comparison-table td:first-child{width:27%}
-    .comparison-table th:nth-child(2),.comparison-table td:nth-child(2){width:38%}
-    .comparison-table th:nth-child(3),.comparison-table td:nth-child(3){width:35%}
-    .formula{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;white-space:normal}
-    .blank{display:inline-block;width:min(90px,40%);min-width:42px;border-bottom:2px solid currentColor;transform:translateY(-2px)}
-    .opposites-table td:first-child,.opposites-table td:last-child{width:46%}
-    .opposites-table td:nth-child(2){width:8%;text-align:center;color:var(--muted)}
-    .opposites-table td:nth-child(3){color:var(--accent);font-weight:800}
-    .examples{display:grid;gap:10px}
-    .example{min-width:0;padding:13px 14px;border:1px solid var(--line);border-radius:11px;background:var(--panel-2);font-size:15px;line-height:1.55;overflow-wrap:anywhere}
-    .example .emph{color:var(--yellow);font-weight:800}
-    .example .note{display:block;margin-top:4px;color:var(--muted);font-size:12px}
-    .compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;min-width:0}
-    .too{border-left:4px solid var(--red)}
-    .enough{border-left:4px solid var(--green)}
-    .word-order-wrap{width:100%;max-width:100%;overflow-x:auto;overflow-y:hidden;padding-bottom:5px;scrollbar-width:thin;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
-    .word-order{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;min-width:0;align-items:stretch}
-    .word-chip{display:flex;flex-direction:column;justify-content:space-between;min-width:0;min-height:104px;padding:12px 9px;border:1px solid var(--line);border-radius:12px;background:var(--panel-2);text-align:center}
-    .word-chip .word{font-size:16px;font-weight:850;color:var(--text);overflow-wrap:anywhere}
-    .word-chip .category{margin-top:10px;color:var(--accent);font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.045em;overflow-wrap:anywhere}
-    .mnemonic{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 14px;padding:11px 13px;border-radius:11px;background:var(--accent-soft);color:var(--accent);font-weight:800}
-    .mnemonic code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;white-space:normal;overflow-wrap:anywhere}
-    .sentence{margin-top:14px;padding:13px 14px;border-radius:11px;border:1px dashed var(--line);font-size:15px;line-height:1.55;overflow-wrap:anywhere}
-    .sentence strong{color:var(--yellow)}
-    @media(max-width:760px){
-      .page{padding:16px 10px 36px}
-      .topbar{gap:10px;margin-bottom:16px}
-      h1{font-size:29px;margin-top:3px}
-      .eyebrow{font-size:10px}
-      .subtitle{font-size:13px}
-      .theme-btn{padding:7px 9px;font-size:12px}
-      .grid{grid-template-columns:1fr;gap:10px}
-      .card.full{grid-column:auto}
-      .card{padding:14px;border-radius:12px}
-      .card h2{font-size:18px}
-      .card-intro{margin-bottom:12px;font-size:13px}
-      .compare{grid-template-columns:1fr;gap:8px}
-      table{font-size:12.5px;border-radius:10px}
-      th,td{padding:8px 6px}
-      th{font-size:10px;letter-spacing:.02em}
-      .formula{font-size:11.5px}
-      .blank{width:min(55px,34%);min-width:28px}
-      .example{padding:10px 11px;font-size:14px}
-      .example .note{font-size:11px}
-      .mnemonic{padding:9px 10px;margin-bottom:10px;font-size:12px}
-      .mnemonic code{font-size:11.5px;line-height:1.45}
-      .word-order{grid-template-columns:repeat(8,84px);gap:6px;min-width:max-content}
-      .word-chip{min-height:82px;padding:9px 6px;border-radius:10px}
-      .word-chip .word{font-size:14px}
-      .word-chip .category{font-size:9px;letter-spacing:.02em;margin-top:7px}
-      .sentence{margin-top:10px;padding:10px 11px;font-size:14px}
-    }
-    @media(max-width:460px){
-      .page{padding-left:8px;padding-right:8px}
-      .topbar{align-items:flex-start}
-      h1{font-size:27px}
-      .card{padding:12px}
-      .card h2{font-size:17px}
-      th,td{padding:7px 5px;font-size:11.5px}
-      th{font-size:9.5px}
-      .formula{font-size:10.5px}
-      .blank{min-width:22px}
-      .opposites-table td:nth-child(2){width:10%}
-      .word-order{grid-template-columns:repeat(8,78px);gap:5px}
-      .word-chip{min-height:76px}
-      .word-chip .word{font-size:13px}
-      .word-chip .category{font-size:8.5px}
-    }
+    .comparison-table th:first-child,.comparison-table td:first-child{width:27%}.comparison-table th:nth-child(2),.comparison-table td:nth-child(2){width:38%}.comparison-table th:nth-child(3),.comparison-table td:nth-child(3){width:35%}
+    .formula{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;white-space:normal}.blank{display:inline-block;width:min(90px,40%);min-width:42px;border-bottom:2px solid currentColor;transform:translateY(-2px)}
+    .opposites-table td:first-child,.opposites-table td:last-child{width:46%}.opposites-table td:nth-child(2){width:8%;text-align:center;color:var(--muted)}.opposites-table td:nth-child(3){color:var(--accent);font-weight:800}
+    .examples{display:grid;gap:10px}.example{min-width:0;padding:13px 14px;border:1px solid var(--line);border-radius:11px;background:var(--panel-2);font-size:15px;line-height:1.55;overflow-wrap:anywhere}.example .emph{color:var(--yellow);font-weight:800}.example .note{display:block;margin-top:4px;color:var(--muted);font-size:12px}
+    .compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;min-width:0}.too{border-left:4px solid var(--red)}.enough{border-left:4px solid var(--green)}
+    .mini-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.mini-rule{padding:13px 14px;border:1px solid var(--line);border-radius:11px;background:var(--panel-2);font-size:14px;line-height:1.55}.mini-rule strong{color:var(--yellow)}
+    .comparison-focus{margin-top:12px;padding:12px 14px;border-radius:11px;background:var(--accent-soft);color:var(--accent);font-size:14px;line-height:1.55}.comparison-focus strong{color:var(--yellow)}
+    .word-order-wrap{width:100%;max-width:100%;overflow-x:auto;overflow-y:hidden;padding-bottom:5px;scrollbar-width:thin;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}.word-order{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;min-width:0;align-items:stretch}.word-chip{display:flex;flex-direction:column;justify-content:space-between;min-width:0;min-height:104px;padding:12px 9px;border:1px solid var(--line);border-radius:12px;background:var(--panel-2);text-align:center}.word-chip .word{font-size:16px;font-weight:850;color:var(--text);overflow-wrap:anywhere}.word-chip .category{margin-top:10px;color:var(--accent);font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.045em;overflow-wrap:anywhere}
+    .mnemonic{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 14px;padding:11px 13px;border-radius:11px;background:var(--accent-soft);color:var(--accent);font-weight:800}.mnemonic code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;white-space:normal;overflow-wrap:anywhere}.sentence{margin-top:14px;padding:13px 14px;border-radius:11px;border:1px dashed var(--line);font-size:15px;line-height:1.55;overflow-wrap:anywhere}.sentence strong{color:var(--yellow)}
+    @media(max-width:760px){.page{padding:16px 10px 36px}.topbar{gap:10px;margin-bottom:16px}h1{font-size:29px;margin-top:3px}.eyebrow{font-size:10px}.subtitle{font-size:13px}.theme-btn{padding:7px 9px;font-size:12px}.grid{grid-template-columns:1fr;gap:10px}.card.full{grid-column:auto}.card{padding:14px;border-radius:12px}.card h2{font-size:18px}.card-intro{margin-bottom:12px;font-size:13px}.compare,.mini-grid{grid-template-columns:1fr;gap:8px}table{font-size:12.5px;border-radius:10px}th,td{padding:8px 6px}th{font-size:10px;letter-spacing:.02em}.formula{font-size:11.5px}.blank{width:min(55px,34%);min-width:28px}.example{padding:10px 11px;font-size:14px}.example .note{font-size:11px}.mini-rule,.comparison-focus{padding:10px 11px;font-size:12.5px}.mnemonic{padding:9px 10px;margin-bottom:10px;font-size:12px}.mnemonic code{font-size:11.5px;line-height:1.45}.word-order{grid-template-columns:repeat(8,84px);gap:6px;min-width:max-content}.word-chip{min-height:82px;padding:9px 6px;border-radius:10px}.word-chip .word{font-size:14px}.word-chip .category{font-size:9px;letter-spacing:.02em;margin-top:7px}.sentence{margin-top:10px;padding:10px 11px;font-size:14px}}
+    @media(max-width:460px){.page{padding-left:8px;padding-right:8px}.topbar{align-items:flex-start}h1{font-size:27px}.card{padding:12px}.card h2{font-size:17px}th,td{padding:7px 5px;font-size:11.5px}th{font-size:9.5px}.formula{font-size:10.5px}.blank{min-width:22px}.opposites-table td:nth-child(2){width:10%}.word-order{grid-template-columns:repeat(8,78px);gap:5px}.word-chip{min-height:76px}.word-chip .word{font-size:13px}.word-chip .category{font-size:8.5px}}
   </style>
 </head>
 <body>
@@ -142,108 +60,71 @@
       <article class="card full">
         <h2>Comparative &amp; superlative</h2>
         <p class="card-intro">Use the comparative for <strong>two things</strong>. Use the superlative for <strong>more than two things</strong>.</p>
-        <div class="table-wrap">
-          <table class="comparison-table">
-            <thead>
-              <tr>
-                <th>Adjective</th>
-                <th>Comparative</th>
-                <th>Superlative</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>short adjectives</td>
-                <td class="formula"><span class="blank"></span>-er than</td>
-                <td class="formula"><span class="blank"></span>-est</td>
-              </tr>
-              <tr>
-                <td>good</td>
-                <td><strong>better than</strong></td>
-                <td><strong>the best</strong></td>
-              </tr>
-              <tr>
-                <td>bad</td>
-                <td><strong>worse than</strong></td>
-                <td><strong>the worst</strong></td>
-              </tr>
-              <tr>
-                <td>long adjectives</td>
-                <td class="formula">more <span class="blank"></span> than</td>
-                <td class="formula">the most <span class="blank"></span></td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="table-wrap"><table class="comparison-table"><thead><tr><th>Adjective</th><th>Comparative</th><th>Superlative</th></tr></thead><tbody>
+          <tr><td>short adjectives</td><td class="formula"><span class="blank"></span>-er than</td><td class="formula"><span class="blank"></span>-est</td></tr>
+          <tr><td>good</td><td><strong>better than</strong></td><td><strong>the best</strong></td></tr>
+          <tr><td>bad</td><td><strong>worse than</strong></td><td><strong>the worst</strong></td></tr>
+          <tr><td>long adjectives</td><td class="formula">more <span class="blank"></span> than</td><td class="formula">the most <span class="blank"></span></td></tr>
+        </tbody></table></div>
+      </article>
+
+      <article class="card full">
+        <h2>More comparison patterns</h2>
+        <p class="card-intro">Extended comparison patterns from the Comparison lesson: adverbs, quantities, repeated change and linked change.</p>
+        <div class="table-wrap"><table><thead><tr><th>Type</th><th>Comparative</th><th>Superlative</th></tr></thead><tbody>
+          <tr><td>regular adverb</td><td><strong>more fluently than</strong></td><td><strong>the most fluently</strong></td></tr>
+          <tr><td>hard</td><td><strong>harder than</strong></td><td><strong>the hardest</strong></td></tr>
+          <tr><td>early</td><td><strong>earlier than</strong></td><td><strong>the earliest</strong></td></tr>
+          <tr><td>well</td><td><strong>better than</strong></td><td><strong>the best</strong></td></tr>
+          <tr><td>badly</td><td><strong>worse than</strong></td><td><strong>the worst</strong></td></tr>
+        </tbody></table></div>
+
+        <div class="table-wrap" style="margin-top:12px"><table><thead><tr><th>Quantity</th><th>Comparative</th><th>Superlative</th></tr></thead><tbody>
+          <tr><td>countable nouns</td><td><strong>fewer ... than</strong></td><td><strong>the fewest</strong></td></tr>
+          <tr><td>uncountable nouns</td><td><strong>less ... than</strong></td><td><strong>the least</strong></td></tr>
+          <tr><td>both</td><td><strong>more ... than</strong></td><td><strong>the most</strong></td></tr>
+        </tbody></table></div>
+
+        <div class="mini-grid">
+          <div class="mini-rule"><strong>comparative + and + comparative</strong><br>Your English is getting <strong>better and better</strong>.<br>We have <strong>less and less</strong> free time.</div>
+          <div class="mini-rule"><strong>less / the least</strong><br>He's <strong>less famous than</strong> his brother.<br>This is <strong>the least comfortable</strong> bed.</div>
         </div>
+        <div class="comparison-focus"><strong>The + comparative..., the + comparative...</strong><br><strong>The more</strong> you exercise, <strong>the fitter</strong> you get.<br><strong>The longer</strong> I live, <strong>the less</strong> I understand.<br>Short form: <strong>The stronger, the better.</strong></div>
       </article>
 
       <article class="card full">
         <h2>Opposites with <em>un-</em></h2>
         <p class="card-intro">Add <strong>un-</strong> to make the opposite of these adjectives.</p>
-        <div class="table-wrap">
-          <table class="opposites-table">
-            <tbody>
-              <tr><td>happy</td><td>→</td><td>unhappy</td></tr>
-              <tr><td>intelligent</td><td>→</td><td>unintelligent</td></tr>
-              <tr><td>kind</td><td>→</td><td>unkind</td></tr>
-              <tr><td>friendly</td><td>→</td><td>unfriendly</td></tr>
-              <tr><td>comfortable</td><td>→</td><td>uncomfortable</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <div class="table-wrap"><table class="opposites-table"><tbody>
+          <tr><td>happy</td><td>→</td><td>unhappy</td></tr><tr><td>intelligent</td><td>→</td><td>unintelligent</td></tr><tr><td>kind</td><td>→</td><td>unkind</td></tr><tr><td>friendly</td><td>→</td><td>unfriendly</td></tr><tr><td>comfortable</td><td>→</td><td>uncomfortable</td></tr>
+        </tbody></table></div>
       </article>
 
       <article class="card full">
         <h2>So &amp; such</h2>
         <p class="card-intro"><strong>So</strong> and <strong>such</strong> give extra emphasis to an idea.</p>
-        <div class="examples">
-          <div class="example">She is <span class="emph">so</span> kind.<span class="note">so + adjective</span></div>
-          <div class="example">She is <span class="emph">such a</span> kind person.<span class="note">such + (adjective) + noun</span></div>
-        </div>
+        <div class="examples"><div class="example">She is <span class="emph">so</span> kind.<span class="note">so + adjective</span></div><div class="example">She is <span class="emph">such a</span> kind person.<span class="note">such + (adjective) + noun</span></div></div>
       </article>
 
       <article class="card full">
         <h2>Too &amp; enough</h2>
         <p class="card-intro">Use <strong>too</strong> before an adjective. Use <strong>enough</strong> after an adjective.</p>
-        <div class="compare">
-          <div class="example too">I cannot drink this coffee. It is <span class="emph">too</span> hot.<span class="note">too + adjective</span></div>
-          <div class="example enough">Now it is cool <span class="emph">enough</span> to drink.<span class="note">adjective + enough</span></div>
-        </div>
+        <div class="compare"><div class="example too">I cannot drink this coffee. It is <span class="emph">too</span> hot.<span class="note">too + adjective</span></div><div class="example enough">Now it is cool <span class="emph">enough</span> to drink.<span class="note">adjective + enough</span></div></div>
       </article>
 
       <article class="card full">
         <h2>Word order (OS AS C NMN)</h2>
         <p class="card-intro">When several adjectives come before a noun, they normally follow this order.</p>
         <div class="mnemonic"><span>Order:</span><code>Opinion → Size → Age → Shape → Colour → Nationality → Material → Noun</code></div>
-
-        <div class="word-order-wrap" aria-label="Adjective word order example">
-          <div class="word-order">
-            <div class="word-chip"><span class="word">beautiful</span><span class="category">opinion</span></div>
-            <div class="word-chip"><span class="word">large</span><span class="category">size</span></div>
-            <div class="word-chip"><span class="word">old</span><span class="category">age</span></div>
-            <div class="word-chip"><span class="word">round</span><span class="category">shape</span></div>
-            <div class="word-chip"><span class="word">red</span><span class="category">colour</span></div>
-            <div class="word-chip"><span class="word">Italian</span><span class="category">nationality</span></div>
-            <div class="word-chip"><span class="word">wooden</span><span class="category">material</span></div>
-            <div class="word-chip"><span class="word">table</span><span class="category">noun</span></div>
-          </div>
-        </div>
-
+        <div class="word-order-wrap" aria-label="Adjective word order example"><div class="word-order">
+          <div class="word-chip"><span class="word">beautiful</span><span class="category">opinion</span></div><div class="word-chip"><span class="word">large</span><span class="category">size</span></div><div class="word-chip"><span class="word">old</span><span class="category">age</span></div><div class="word-chip"><span class="word">round</span><span class="category">shape</span></div><div class="word-chip"><span class="word">red</span><span class="category">colour</span></div><div class="word-chip"><span class="word">Italian</span><span class="category">nationality</span></div><div class="word-chip"><span class="word">wooden</span><span class="category">material</span></div><div class="word-chip"><span class="word">table</span><span class="category">noun</span></div>
+        </div></div>
         <div class="sentence">A <strong>beautiful large old round red Italian wooden table</strong>.</div>
       </article>
     </section>
   </main>
-
   <script>
-    const root = document.documentElement;
-    const button = document.getElementById('themeBtn');
-    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-    if (prefersLight) root.setAttribute('data-theme','light');
-    button.addEventListener('click', () => {
-      const light = root.getAttribute('data-theme') === 'light';
-      if (light) root.removeAttribute('data-theme');
-      else root.setAttribute('data-theme','light');
-    });
+    const root=document.documentElement;const button=document.getElementById('themeBtn');const prefersLight=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches;if(prefersLight)root.setAttribute('data-theme','light');button.addEventListener('click',()=>{const light=root.getAttribute('data-theme')==='light';if(light)root.removeAttribute('data-theme');else root.setAttribute('data-theme','light')});
   </script>
 </body>
 </html>
