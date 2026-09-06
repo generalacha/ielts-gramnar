@@ -37,58 +37,93 @@
       --shadow:0 10px 30px rgba(20,36,70,.08);
       color-scheme:light;
     }
-    html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+    html,body{margin:0;min-height:100%;max-width:100%;overflow-x:hidden;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
     button{font:inherit}
-    .page{max-width:1120px;margin:0 auto;padding:28px 24px 64px}
+    .page{width:100%;max-width:1120px;margin:0 auto;padding:28px 24px 64px}
     .topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:24px}
     .eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
     h1{font-size:38px;line-height:1.05;margin:5px 0 7px;letter-spacing:-.03em}
-    .subtitle{margin:0;color:var(--muted);font-size:15px}
-    .theme-btn{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:10px;padding:9px 12px;cursor:pointer;white-space:nowrap}
-    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-    .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+    .subtitle{margin:0;color:var(--muted);font-size:15px;line-height:1.4}
+    .theme-btn{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:10px;padding:9px 12px;cursor:pointer;white-space:nowrap;flex:0 0 auto}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;min-width:0}
+    .card{min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
     .card.full{grid-column:1/-1}
     .card h2{margin:0 0 7px;font-size:21px;letter-spacing:-.015em}
     .card-intro{margin:0 0 18px;color:var(--muted);font-size:14px;line-height:1.5}
-    table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border:1px solid var(--line);border-radius:12px;font-size:14px}
-    th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);border-right:1px solid var(--line);vertical-align:middle}
+    .table-wrap{width:100%;min-width:0}
+    table{width:100%;max-width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border:1px solid var(--line);border-radius:12px;font-size:14px;table-layout:fixed}
+    th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);border-right:1px solid var(--line);vertical-align:middle;overflow-wrap:anywhere}
     th:last-child,td:last-child{border-right:0}
     tr:last-child td{border-bottom:0}
-    th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);background:var(--panel-2)}
+    th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);background:var(--panel-2)}
     td strong{color:var(--yellow)}
-    .formula{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;white-space:nowrap}
-    .blank{display:inline-block;min-width:90px;border-bottom:2px solid currentColor;transform:translateY(-2px)}
-    .opposites-table td:nth-child(2){width:52px;text-align:center;color:var(--muted)}
+    .comparison-table th:first-child,.comparison-table td:first-child{width:27%}
+    .comparison-table th:nth-child(2),.comparison-table td:nth-child(2){width:38%}
+    .comparison-table th:nth-child(3),.comparison-table td:nth-child(3){width:35%}
+    .formula{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;white-space:normal}
+    .blank{display:inline-block;width:min(90px,40%);min-width:42px;border-bottom:2px solid currentColor;transform:translateY(-2px)}
+    .opposites-table td:first-child,.opposites-table td:last-child{width:46%}
+    .opposites-table td:nth-child(2){width:8%;text-align:center;color:var(--muted)}
     .opposites-table td:nth-child(3){color:var(--accent);font-weight:800}
     .examples{display:grid;gap:10px}
-    .example{padding:13px 14px;border:1px solid var(--line);border-radius:11px;background:var(--panel-2);font-size:15px;line-height:1.55}
+    .example{min-width:0;padding:13px 14px;border:1px solid var(--line);border-radius:11px;background:var(--panel-2);font-size:15px;line-height:1.55;overflow-wrap:anywhere}
     .example .emph{color:var(--yellow);font-weight:800}
     .example .note{display:block;margin-top:4px;color:var(--muted);font-size:12px}
-    .compare{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;min-width:0}
     .too{border-left:4px solid var(--red)}
     .enough{border-left:4px solid var(--green)}
-    .word-order-wrap{overflow-x:auto;padding-bottom:5px;scrollbar-width:thin}
-    .word-order{display:grid;grid-template-columns:repeat(8,minmax(112px,1fr));gap:8px;min-width:950px;align-items:stretch}
-    .word-chip{display:flex;flex-direction:column;justify-content:space-between;min-height:104px;padding:12px 9px;border:1px solid var(--line);border-radius:12px;background:var(--panel-2);text-align:center}
-    .word-chip .word{font-size:16px;font-weight:850;color:var(--text)}
-    .word-chip .category{margin-top:10px;color:var(--accent);font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.055em}
-    .mnemonic{display:flex;align-items:center;gap:10px;margin:0 0 14px;padding:11px 13px;border-radius:11px;background:var(--accent-soft);color:var(--accent);font-weight:800;overflow:auto}
-    .mnemonic code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;white-space:nowrap}
-    .sentence{margin-top:14px;padding:13px 14px;border-radius:11px;border:1px dashed var(--line);font-size:15px;line-height:1.55}
+    .word-order-wrap{width:100%;max-width:100%;overflow-x:auto;overflow-y:hidden;padding-bottom:5px;scrollbar-width:thin;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+    .word-order{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;min-width:0;align-items:stretch}
+    .word-chip{display:flex;flex-direction:column;justify-content:space-between;min-width:0;min-height:104px;padding:12px 9px;border:1px solid var(--line);border-radius:12px;background:var(--panel-2);text-align:center}
+    .word-chip .word{font-size:16px;font-weight:850;color:var(--text);overflow-wrap:anywhere}
+    .word-chip .category{margin-top:10px;color:var(--accent);font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.045em;overflow-wrap:anywhere}
+    .mnemonic{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 14px;padding:11px 13px;border-radius:11px;background:var(--accent-soft);color:var(--accent);font-weight:800}
+    .mnemonic code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;white-space:normal;overflow-wrap:anywhere}
+    .sentence{margin-top:14px;padding:13px 14px;border-radius:11px;border:1px dashed var(--line);font-size:15px;line-height:1.55;overflow-wrap:anywhere}
     .sentence strong{color:var(--yellow)}
     @media(max-width:760px){
-      .page{padding:20px 14px 44px}
-      h1{font-size:31px}
-      .grid{grid-template-columns:1fr}
+      .page{padding:16px 10px 36px}
+      .topbar{gap:10px;margin-bottom:16px}
+      h1{font-size:29px;margin-top:3px}
+      .eyebrow{font-size:10px}
+      .subtitle{font-size:13px}
+      .theme-btn{padding:7px 9px;font-size:12px}
+      .grid{grid-template-columns:1fr;gap:10px}
       .card.full{grid-column:auto}
-      .compare{grid-template-columns:1fr}
-      .card{padding:17px}
+      .card{padding:14px;border-radius:12px}
+      .card h2{font-size:18px}
+      .card-intro{margin-bottom:12px;font-size:13px}
+      .compare{grid-template-columns:1fr;gap:8px}
+      table{font-size:12.5px;border-radius:10px}
+      th,td{padding:8px 6px}
+      th{font-size:10px;letter-spacing:.02em}
+      .formula{font-size:11.5px}
+      .blank{width:min(55px,34%);min-width:28px}
+      .example{padding:10px 11px;font-size:14px}
+      .example .note{font-size:11px}
+      .mnemonic{padding:9px 10px;margin-bottom:10px;font-size:12px}
+      .mnemonic code{font-size:11.5px;line-height:1.45}
+      .word-order{grid-template-columns:repeat(8,84px);gap:6px;min-width:max-content}
+      .word-chip{min-height:82px;padding:9px 6px;border-radius:10px}
+      .word-chip .word{font-size:14px}
+      .word-chip .category{font-size:9px;letter-spacing:.02em;margin-top:7px}
+      .sentence{margin-top:10px;padding:10px 11px;font-size:14px}
     }
     @media(max-width:460px){
+      .page{padding-left:8px;padding-right:8px}
       .topbar{align-items:flex-start}
-      .theme-btn{padding:8px 10px;font-size:12px}
-      th,td{padding:9px 8px;font-size:13px}
-      .blank{min-width:55px}
+      h1{font-size:27px}
+      .card{padding:12px}
+      .card h2{font-size:17px}
+      th,td{padding:7px 5px;font-size:11.5px}
+      th{font-size:9.5px}
+      .formula{font-size:10.5px}
+      .blank{min-width:22px}
+      .opposites-table td:nth-child(2){width:10%}
+      .word-order{grid-template-columns:repeat(8,78px);gap:5px}
+      .word-chip{min-height:76px}
+      .word-chip .word{font-size:13px}
+      .word-chip .category{font-size:8.5px}
     }
   </style>
 </head>
@@ -107,8 +142,8 @@
       <article class="card full">
         <h2>Comparative &amp; superlative</h2>
         <p class="card-intro">Use the comparative for <strong>two things</strong>. Use the superlative for <strong>more than two things</strong>.</p>
-        <div style="overflow-x:auto">
-          <table>
+        <div class="table-wrap">
+          <table class="comparison-table">
             <thead>
               <tr>
                 <th>Adjective</th>
@@ -145,7 +180,7 @@
       <article class="card full">
         <h2>Opposites with <em>un-</em></h2>
         <p class="card-intro">Add <strong>un-</strong> to make the opposite of these adjectives.</p>
-        <div style="overflow-x:auto">
+        <div class="table-wrap">
           <table class="opposites-table">
             <tbody>
               <tr><td>happy</td><td>→</td><td>unhappy</td></tr>
