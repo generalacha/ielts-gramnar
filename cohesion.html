@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>IELTS — Cohesion</title>
+  <style>
+    *{box-sizing:border-box}
+    :root{--bg:#0f1420;--panel:#171d2a;--panel2:#111827;--text:#f1f4fa;--muted:#9ba7bb;--line:#293244;--accent:#89a5ff;--accent2:#202d52;--yellow:#ffd166;--green:#6ce9a6;--red:#f97066;--shadow:0 18px 50px rgba(0,0,0,.18);color-scheme:dark}
+    [data-theme="light"]{--bg:#f5f7fb;--panel:#fff;--panel2:#f8faff;--text:#172033;--muted:#667085;--line:#e4e8f0;--accent:#3157d5;--accent2:#eaf0ff;--yellow:#a15c00;--green:#18794e;--red:#b42318;--shadow:0 10px 30px rgba(20,36,70,.08);color-scheme:light}
+    html,body{margin:0;min-height:100%;max-width:100%;overflow-x:hidden;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+    button{font:inherit}.page{width:100%;max-width:1120px;margin:0 auto;padding:28px 24px 64px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:24px}.eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}h1{font-size:38px;line-height:1.05;margin:5px 0 7px;letter-spacing:-.03em}.subtitle{margin:0;color:var(--muted);font-size:15px;line-height:1.4}.theme-btn{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:10px;padding:9px 12px;cursor:pointer;white-space:nowrap;flex:0 0 auto}
+    .grid{display:grid;grid-template-columns:1fr;gap:16px;min-width:0}.card{min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}.card h2{margin:0 0 7px;font-size:21px;letter-spacing:-.015em}.card-intro{margin:0 0 16px;color:var(--muted);font-size:14px;line-height:1.55}.table-wrap{width:100%;min-width:0}table{width:100%;max-width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px;table-layout:fixed}th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);border-right:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}th:last-child,td:last-child{border-right:0}tr:last-child td{border-bottom:0}th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);background:var(--panel2)}td strong,.emph{color:var(--yellow);font-weight:800}.function-col{width:25%}
+    .rule-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:14px}.rule{padding:12px 13px;border:1px solid var(--line);border-radius:11px;background:var(--panel2);font-size:14px;line-height:1.5}.rule strong{color:var(--accent)}.example{margin-top:6px;color:var(--muted);font-size:12px;line-height:1.45}.good{color:var(--green)}.bad{color:var(--red)}
+    .important{margin:12px 0 0;padding:12px 13px;border-radius:11px;background:var(--accent2);color:var(--accent);font-size:13px;line-height:1.5}.important strong{color:var(--yellow)}
+    .mini-title{margin:18px 0 9px;font-size:15px;font-weight:800;color:var(--text)}
+    .sequence{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:12px 0 14px}.seq{padding:13px;border:1px solid var(--line);border-radius:11px;background:var(--panel2)}.seq span{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}.seq strong{color:var(--yellow);font-size:14px}
+    @media(max-width:760px){.page{padding:16px 10px 36px}.topbar{gap:10px;margin-bottom:16px}h1{font-size:29px;margin-top:3px}.eyebrow{font-size:10px}.subtitle{font-size:13px}.theme-btn{padding:7px 9px;font-size:12px}.grid{gap:10px}.card{padding:14px;border-radius:12px}.card h2{font-size:18px}.card-intro{font-size:13px;margin-bottom:12px}table{font-size:12.5px;border-radius:10px}th,td{padding:8px 6px}th{font-size:10px;letter-spacing:.02em}.rule-grid,.sequence{grid-template-columns:1fr;gap:8px}.rule,.seq{padding:10px 11px}.function-col{width:27%}}
+    @media(max-width:460px){.page{padding-left:8px;padding-right:8px}.topbar{align-items:flex-start}h1{font-size:27px}.card{padding:12px}.card h2{font-size:17px}th,td{padding:7px 5px;font-size:11.5px}th{font-size:9.5px}.function-col{width:29%}}
+  </style>
+</head>
+<body>
+<main class="page">
+  <header class="topbar">
+    <div>
+      <div class="eyebrow">IELTS Grammar</div>
+      <h1>Cohesion</h1>
+      <p class="subtitle">Linking adjuncts and linking &amp; sequencing events.</p>
+    </div>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Change theme">☀︎ / ☾</button>
+  </header>
+
+  <section class="grid">
+    <article class="card">
+      <h2>Linking adjuncts</h2>
+      <p class="card-intro">Linking adjuncts show the connection between one sentence or clause and another. The two main ideas here are <strong>alternatives</strong> and <strong>contrasts</strong>.</p>
+
+      <div class="rule-grid">
+        <div class="rule"><strong>as opposed to + noun / -ing</strong><div class="example">He relaxed at home, <span class="emph">as opposed to</span> going out.</div></div>
+        <div class="rule"><strong>instead of + noun / -ing</strong><div class="example">She stayed home <span class="emph">instead of</span> going out.</div></div>
+        <div class="rule"><strong>although / though + clause</strong><div class="example"><span class="emph">Although</span> it was raining, we went out.</div></div>
+        <div class="rule"><strong>however / nevertheless</strong><div class="example">It was raining. <span class="emph">However</span>, we went out.</div></div>
+      </div>
+
+      <div class="table-wrap"><table>
+        <thead><tr><th class="function-col">Function</th><th>Formal / neutral</th><th>Informal / spoken</th></tr></thead>
+        <tbody>
+          <tr><td>alternative</td><td><strong>as opposed to</strong></td><td><strong>instead of</strong></td></tr>
+          <tr><td>another side</td><td><strong>on the other hand</strong></td><td><strong>then again</strong></td></tr>
+          <tr><td>different option</td><td><strong>alternatively</strong></td><td><strong>or else</strong></td></tr>
+          <tr><td>contrast</td><td><strong>nevertheless</strong></td><td><strong>even so</strong></td></tr>
+          <tr><td>unexpected contrast</td><td><strong>however</strong></td><td><strong>but still</strong></td></tr>
+        </tbody>
+      </table></div>
+
+      <div class="important"><strong>Important:</strong> <em>however</em> can appear at the beginning or the end of a sentence. As a sentence-linking adjunct, <em>though</em> normally appears later in the sentence, not as <strong>“Though, ...”</strong> after a full stop.</div>
+    </article>
+
+    <article class="card">
+      <h2>Linking and sequencing events</h2>
+      <p class="card-intro">These words and phrases put events in order. The key choices are <strong>when, after, after that, afterwards, next, subsequently, later on, followed by, go on to</strong> and <strong>finally</strong>.</p>
+
+      <div class="sequence">
+        <div class="seq"><span>Start / time</span><strong>when / after</strong></div>
+        <div class="seq"><span>Next event</span><strong>after that / next</strong></div>
+        <div class="seq"><span>Later event</span><strong>subsequently / later on</strong></div>
+        <div class="seq"><span>End</span><strong>finally / in the end</strong></div>
+      </div>
+
+      <div class="rule-grid">
+        <div class="rule"><strong>when / after + clause</strong><div class="example"><span class="emph">After he heard the news</span>, he went home.</div></div>
+        <div class="rule"><strong>after + -ing</strong><div class="example"><span class="emph">After hearing the news</span>, he went home.</div></div>
+        <div class="rule"><strong>after that / afterwards</strong><div class="example">We saw a film and <span class="emph">after that</span> we had dinner.</div></div>
+        <div class="rule"><strong>go on to + infinitive</strong><div class="example">She <span class="emph">went on to become</span> a manager.</div></div>
+      </div>
+
+      <div class="mini-title">Formal vs informal sequencing</div>
+      <div class="table-wrap"><table>
+        <thead><tr><th class="function-col">Use</th><th>Formal / neutral</th><th>Informal / spoken</th></tr></thead>
+        <tbody>
+          <tr><td>after this</td><td><strong>following this</strong></td><td><strong>after that</strong></td></tr>
+          <tr><td>later</td><td><strong>at a later stage</strong></td><td><strong>later on</strong></td></tr>
+          <tr><td>next event</td><td><strong>subsequently</strong></td><td><strong>and then</strong></td></tr>
+          <tr><td>continuation</td><td><strong>went on to</strong></td><td><strong>then went on to</strong></td></tr>
+          <tr><td>final stage</td><td><strong>at the final stage</strong></td><td><strong>in the end</strong></td></tr>
+        </tbody>
+      </table></div>
+
+      <div class="important"><strong>Remember:</strong> <em>subsequently</em> is more formal than <em>next</em> and is common in written English. <em>After that</em> is useful for a list of events; <em>afterwards</em> refers back to the event just mentioned. <em>After</em> is not normally used by itself as an adverb.</div>
+    </article>
+  </section>
+</main>
+<script>
+  const root=document.documentElement;const button=document.getElementById('themeBtn');const prefersLight=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches;if(prefersLight)root.setAttribute('data-theme','light');button.addEventListener('click',()=>{const light=root.getAttribute('data-theme')==='light';if(light)root.removeAttribute('data-theme');else root.setAttribute('data-theme','light')});
+</script>
+</body>
+</html>
