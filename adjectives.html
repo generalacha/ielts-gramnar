@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>IELTS — Adjectives</title>
+  <style>
+    *{box-sizing:border-box}
+    :root{
+      --bg:#0f1420;
+      --panel:#171d2a;
+      --panel-2:#111827;
+      --text:#f1f4fa;
+      --muted:#9ba7bb;
+      --line:#293244;
+      --accent:#89a5ff;
+      --accent-soft:#202d52;
+      --green:#6ce9a6;
+      --yellow:#ffd166;
+      --red:#f97066;
+      --shadow:0 18px 50px rgba(0,0,0,.18);
+      color-scheme:dark;
+    }
+    [data-theme="light"]{
+      --bg:#f5f7fb;
+      --panel:#ffffff;
+      --panel-2:#f8faff;
+      --text:#172033;
+      --muted:#667085;
+      --line:#e4e8f0;
+      --accent:#3157d5;
+      --accent-soft:#eaf0ff;
+      --green:#18794e;
+      --yellow:#a15c00;
+      --red:#b42318;
+      --shadow:0 10px 30px rgba(20,36,70,.08);
+      color-scheme:light;
+    }
+    html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+    button{font:inherit}
+    .page{max-width:1120px;margin:0 auto;padding:28px 24px 64px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:24px}
+    .eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+    h1{font-size:38px;line-height:1.05;margin:5px 0 7px;letter-spacing:-.03em}
+    .subtitle{margin:0;color:var(--muted);font-size:15px}
+    .theme-btn{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:10px;padding:9px 12px;cursor:pointer;white-space:nowrap}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+    .card.full{grid-column:1/-1}
+    .card h2{margin:0 0 7px;font-size:21px;letter-spacing:-.015em}
+    .card-intro{margin:0 0 18px;color:var(--muted);font-size:14px;line-height:1.5}
+    .rule-strip{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:17px}
+    .rule{padding:8px 10px;border-radius:9px;background:var(--accent-soft);color:var(--accent);font-weight:800;font-size:13px}
+    table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border:1px solid var(--line);border-radius:12px;font-size:14px}
+    th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);border-right:1px solid var(--line);vertical-align:middle}
+    th:last-child,td:last-child{border-right:0}
+    tr:last-child td{border-bottom:0}
+    th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);background:var(--panel-2)}
+    td strong{color:var(--yellow)}
+    .formula{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;white-space:nowrap}
+    .blank{display:inline-block;min-width:90px;border-bottom:2px solid currentColor;transform:translateY(-2px)}
+    .pairs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+    .pair{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:9px;padding:11px 12px;border:1px solid var(--line);border-radius:11px;background:var(--panel-2)}
+    .pair span:last-child{text-align:right;color:var(--accent);font-weight:800}
+    .arrow{color:var(--muted)}
+    .examples{display:grid;gap:10px}
+    .example{padding:13px 14px;border:1px solid var(--line);border-radius:11px;background:var(--panel-2);font-size:15px;line-height:1.55}
+    .example b{color:var(--yellow)}
+    .example .note{display:block;margin-top:4px;color:var(--muted);font-size:12px}
+    .compare{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .too{border-left:4px solid var(--red)}
+    .enough{border-left:4px solid var(--green)}
+    .word-order-wrap{overflow-x:auto;padding-bottom:5px;scrollbar-width:thin}
+    .word-order{display:grid;grid-template-columns:repeat(8,minmax(112px,1fr));gap:8px;min-width:950px;align-items:stretch}
+    .word-chip{display:flex;flex-direction:column;justify-content:space-between;min-height:104px;padding:12px 9px;border:1px solid var(--line);border-radius:12px;background:var(--panel-2);text-align:center}
+    .word-chip .word{font-size:16px;font-weight:850;color:var(--text)}
+    .word-chip .category{margin-top:10px;color:var(--accent);font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.055em}
+    .mnemonic{display:flex;align-items:center;gap:10px;margin:0 0 14px;padding:11px 13px;border-radius:11px;background:var(--accent-soft);color:var(--accent);font-weight:800;overflow:auto}
+    .mnemonic code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;white-space:nowrap}
+    .sentence{margin-top:14px;padding:13px 14px;border-radius:11px;border:1px dashed var(--line);font-size:15px;line-height:1.55}
+    .sentence strong{color:var(--yellow)}
+    .tip{margin-top:12px;font-size:12px;color:var(--muted)}
+    @media(max-width:760px){
+      .page{padding:20px 14px 44px}
+      h1{font-size:31px}
+      .grid{grid-template-columns:1fr}
+      .card.full{grid-column:auto}
+      .pairs,.compare{grid-template-columns:1fr}
+      .card{padding:17px}
+    }
+    @media(max-width:460px){
+      .topbar{align-items:flex-start}
+      .theme-btn{padding:8px 10px;font-size:12px}
+      th,td{padding:9px 8px;font-size:13px}
+      .blank{min-width:55px}
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">IELTS Grammar</div>
+        <h1>Adjectives</h1>
+        <p class="subtitle">Comparatives, superlatives, opposites, emphasis and adjective order.</p>
+      </div>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Change theme">☀︎ / ☾</button>
+    </header>
+
+    <section class="grid">
+      <article class="card full">
+        <h2>Comparative &amp; superlative</h2>
+        <p class="card-intro">Use the comparative for <strong>two things</strong>. Use the superlative for <strong>more than two things</strong>.</p>
+        <div class="rule-strip">
+          <div class="rule">comparative → -er than</div>
+          <div class="rule">superlative → the -est</div>
+        </div>
+        <div style="overflow-x:auto">
+          <table>
+            <thead>
+              <tr>
+                <th>Adjective</th>
+                <th>Comparative</th>
+                <th>Superlative</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>good</td>
+                <td><strong>better than</strong></td>
+                <td><strong>the best</strong></td>
+              </tr>
+              <tr>
+                <td>bad</td>
+                <td><strong>worse than</strong></td>
+                <td><strong>the worst</strong></td>
+              </tr>
+              <tr>
+                <td>long adjectives</td>
+                <td class="formula">more <span class="blank"></span> than</td>
+                <td class="formula">the most <span class="blank"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Opposites with <em>un-</em></h2>
+        <p class="card-intro">Add <strong>un-</strong> to make the opposite of these adjectives.</p>
+        <div class="pairs">
+          <div class="pair"><span>happy</span><span class="arrow">→</span><span>unhappy</span></div>
+          <div class="pair"><span>intelligent</span><span class="arrow">→</span><span>unintelligent</span></div>
+          <div class="pair"><span>kind</span><span class="arrow">→</span><span>unkind</span></div>
+          <div class="pair"><span>friendly</span><span class="arrow">→</span><span>unfriendly</span></div>
+          <div class="pair"><span>comfortable</span><span class="arrow">→</span><span>uncomfortable</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>So &amp; such</h2>
+        <p class="card-intro"><strong>So</strong> and <strong>such</strong> give extra emphasis to an idea.</p>
+        <div class="examples">
+          <div class="example">She is <b>so kind</b>.<span class="note">so + adjective</span></div>
+          <div class="example">She is <b>such a kind person</b>.<span class="note">such + (adjective) + noun</span></div>
+        </div>
+      </article>
+
+      <article class="card full">
+        <h2>Too &amp; enough</h2>
+        <p class="card-intro">Use <strong>too</strong> before an adjective. Use <strong>enough</strong> after an adjective.</p>
+        <div class="compare">
+          <div class="example too">I cannot drink this coffee. It is <b>too hot</b>.<span class="note">too + adjective</span></div>
+          <div class="example enough">Now it is <b>cool enough</b> to drink.<span class="note">adjective + enough</span></div>
+        </div>
+      </article>
+
+      <article class="card full">
+        <h2>Word order</h2>
+        <p class="card-intro">When several adjectives come before a noun, they normally follow this order.</p>
+        <div class="mnemonic"><span>Order:</span><code>Opinion → Size → Age → Shape → Colour → Nationality → Material → Noun</code></div>
+
+        <div class="word-order-wrap" aria-label="Adjective word order example">
+          <div class="word-order">
+            <div class="word-chip"><span class="word">beautiful</span><span class="category">opinion</span></div>
+            <div class="word-chip"><span class="word">large</span><span class="category">size</span></div>
+            <div class="word-chip"><span class="word">old</span><span class="category">age</span></div>
+            <div class="word-chip"><span class="word">round</span><span class="category">shape</span></div>
+            <div class="word-chip"><span class="word">red</span><span class="category">colour</span></div>
+            <div class="word-chip"><span class="word">Italian</span><span class="category">nationality</span></div>
+            <div class="word-chip"><span class="word">wooden</span><span class="category">material</span></div>
+            <div class="word-chip"><span class="word">table</span><span class="category">noun</span></div>
+          </div>
+        </div>
+
+        <div class="sentence">A <strong>beautiful large old round red Italian wooden table</strong>.</div>
+        <div class="tip">On small screens, this row stays horizontal and can be scrolled sideways so the word/category match is preserved.</div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    const root = document.documentElement;
+    const button = document.getElementById('themeBtn');
+    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    if (prefersLight) root.setAttribute('data-theme','light');
+    button.addEventListener('click', () => {
+      const light = root.getAttribute('data-theme') === 'light';
+      if (light) root.removeAttribute('data-theme');
+      else root.setAttribute('data-theme','light');
+    });
+  </script>
+</body>
+</html>
